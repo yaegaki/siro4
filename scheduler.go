@@ -331,7 +331,7 @@ func (errNotExists) Error() string {
 
 func (c videoChannel) getVideoID(t time.Time) (string, error) {
 	for _, item := range c.Items {
-		if item.Time.Before(t) {
+		if t.Before(item.Time) {
 			continue
 		}
 
