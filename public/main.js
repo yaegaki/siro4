@@ -67,7 +67,7 @@
             const newSchedule = await fetchSchedule();
             console.log('update schedule.');
             console.log(newSchedule);
-            players.forEach(p => p.applySchedle(newSchedule));
+            players.forEach(p => p.applySchedule(newSchedule));
         }
     }
 
@@ -95,7 +95,7 @@
 
         const player = {
             ytPlayer,
-            applySchedle(newSchedule) {
+            applySchedule(newSchedule) {
                 schedule = newSchedule;
             },
         };
