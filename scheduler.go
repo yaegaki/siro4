@@ -157,25 +157,25 @@ func getNextBlock(r *rand.Rand, blocks []videoSourceBlock, index, count, max int
 				start: newStart,
 				count: newEnd - newStart + 1,
 			}
+		}
+
+		newStart := end + 1
+		newEnd := newStart + count - 1
+		var endLimit int
+		if i+1 == len(blocks) {
+			endLimit = max - 1
 		} else {
-			newStart := end + 1
-			newEnd := newStart + count - 1
-			var endLimit int
-			if i+1 == len(blocks) {
-				endLimit = max - 1
-			} else {
-				nextBlock := blocks[i+1]
-				endLimit = nextBlock.start - 1
-			}
+			nextBlock := blocks[i+1]
+			endLimit = nextBlock.start - 1
+		}
 
-			if newEnd > endLimit {
-				newEnd = endLimit
-			}
+		if newEnd > endLimit {
+			newEnd = endLimit
+		}
 
-			return videoSourceBlock{
-				start: newStart,
-				count: newEnd - newStart + 1,
-			}
+		return videoSourceBlock{
+			start: newStart,
+			count: newEnd - newStart + 1,
 		}
 	}
 
