@@ -1,0 +1,20 @@
+runtime: go112
+
+handlers:
+  - url: /schedule
+    script: auto
+    secure: always
+
+  - url: /_task/.*
+    script: auto
+    secure: always
+
+  - url: /(.*\.(gif|png|jpeg|jpg|css|js|ico|json))$
+    static_files: public/\1
+    upload: public/(.*)
+    secure: always
+  
+  - url: /(.*)
+    static_files: public/index.html
+    upload: public/index.html
+    secure: always

@@ -1,0 +1,5 @@
+cron:
+- description: "daily export job"
+  url: /_task/export
+  schedule: every 30 minutes from 01:00 to 02:00
+  timezone: Asia/Tokyo

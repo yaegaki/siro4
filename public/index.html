@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta property="og:title" content="Siro4">
+    <meta property="og:description" content="このサイトはとにかくシロちゃんの動画を大量に視聴したい豆腐さんのためのサイトです。1度に4回の為を摂取することができます。">
+    <meta property="og:image" content="https://siro4.live/sirogumi.png">
+    <title>Siro4</title>
+    <style>
+        html, body {
+            margin: 0;
+            height: 100%;
+            background: radial-gradient(circle, #f7fcff, #ebf7ff);
+            color: #4e4e4e;
+
+            text-align: center;
+        }
+
+        iframe {
+            width: 100%;
+            height: 100%;
+        }
+        
+        section {
+            padding: 2em 1em;
+        }
+
+        #player-container {
+            display: none;
+            grid-template-columns: 1fr 1fr;
+            height: 100%;
+        }
+
+        .player-wrapper {
+            width: 100%;
+        }
+
+        h1 {
+            font-size: 3rem;
+            letter-spacing: .2rem;
+        }
+
+        h2 {
+            font-size: 2.8rem;
+            letter-spacing: .1rem;
+        }
+
+        p {
+            font-size: 1.3rem;
+            margin: 1rem auto;
+            max-width: 650px;
+        }
+
+        .bottom-spacer {
+            margin-bottom: 10rem;
+        }
+
+
+        .App {
+            text-align: center;
+            padding: 1rem;
+        }
+
+        button {
+            outline: none;
+            border: none;
+            background: #d3ecff;
+            padding: 1.2rem;
+            border-radius: 2.6rem;
+            font-size: 1.2rem;
+            cursor: pointer;
+            box-shadow: 0px 3px 1px -2px rgba(0, 0, 0, 0.2), 0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 1px 5px 0px rgba(0,0,0,.12);
+            transition: box-shadow 280ms cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        button:hover {
+            box-shadow: 0px 2px 4px -1px rgba(0, 0, 0, 0.2), 0px 4px 5px 0px rgba(0, 0, 0, 0.14), 0px 1px 10px 0px rgba(0,0,0,.12);
+        }
+
+    </style>
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-136476606-2"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-136476606-2');
+    </script>
+</head>
+<body>
+    <section id="notice">
+        <h1>Siro4</h1>
+        <p>このサイトはとにかくシロちゃんの動画を大量に視聴したい豆腐さんのためのサイトです。1度に4回の為を摂取することができます。</p>
+        <p>視聴できる動画は時間帯によって変わります。動画の種類及び再生時間はこのサイトを使用している全ての端末で同一です。</p>
+        <p>動画を止めずに視聴するために画質の設定を480pにすることを推奨します。動画が止まってしまった場合はリロードしてください。</p>
+        <p>PCのブラウザ(Chrome,Firefox)でのみ動作します。その他のブラウザでは正常に動作しない可能性があります。</p>
+        <button id="watch-button">視聴する</button>
+    </section>
+
+
+    <div id="player-container">
+        <div class="player-wrapper">
+            <div id="player1"></div>
+        </div>
+        <div class="player-wrapper">
+            <div id="player2"></div>
+        </div>
+        <div class="player-wrapper">
+            <div id="player3"></div>
+        </div>
+        <div class="player-wrapper">
+            <div id="player4"></div>
+        </div>
+    </div>
+    <script src="main.js"></script>
+</body>
+</html>
