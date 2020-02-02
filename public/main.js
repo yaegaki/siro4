@@ -62,12 +62,20 @@
 
     async function updateScheduleTask(players) {
         const hour = 1000 * 60 * 60;
+        let interval = hour;
         while (true) {
-            await sleep(hour);
-            const newSchedule = await fetchSchedule();
-            console.log('update schedule.');
-            console.log(newSchedule);
-            players.forEach(p => p.applySchedule(newSchedule));
+            await sleep(interval);
+            try {
+                const newSchedule = await fetchSchedule();
+                console.log('update schedule.');
+                console.log(newSchedule);
+                players.forEach(p => p.applySchedule(newSchedule));
+                interval = hour;
+            }
+            catch {
+                // エラーが起こった時は10分後にリトライする
+                interval = hour / 6;
+            }
         }
     }
 
